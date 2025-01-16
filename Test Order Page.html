@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order - TechWeb</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="index.html">
+                                <img class="header-logo-image" src="dist/images/logo v3.png" alt="Logo">
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-inner">
+                        <div class="hero-copy">
+                            <h1 class="hero-title mt-0">Place Your Order</h1>
+                            <p class="hero-paragraph">Fill out the form below to kickstart your project with us!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <section class="order-form section">
+            <div class="container">
+                <div class="form-wrapper">
+                    <form action="submit_order.php" method="post" style="max-width: 600px; margin: auto;">
+                        <div class="form-group" style="margin-bottom: 0.5rem;">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem;">Full Name</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 0.5rem;">
+                            <label for="email" style="display: block; margin-bottom: 0.5rem;">Email Address</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 0.5rem;">
+                            <label for="project-type" style="display: block; margin-bottom: 0.5rem;">Project Type</label>
+                            <select id="project-type" name="project-type" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"onchange="toggleReferenceImage()">
+                                <option value="basic">Basic Website</option>
+                                <option value="ecommerce">E-commerce Website</option>
+                                <option value="custom">Custom Design</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="reference-image-group" style="margin-bottom: 0.5rem; display: none;">
+                            <label for="reference-image" style="display: block; margin-bottom: 0.5rem;">Reference Image (Optional)</label>
+                            <input type="file" id="reference-image" name="reference-image" accept="image/*" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+
+
+                        <div class="form-group" style="margin-bottom: 0.5rem;">
+                            <label for="budget" style="display: block; margin-bottom: 0.5rem;">Budget</label>
+                            <input type="number" id="budget" name="budget" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;" min="0">
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 0.5rem;">
+                            <label for="details" style="display: block; margin-bottom: 0.5rem;">Project Details</label>
+                            <textarea id="details" name="details" rows="5" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="button button-primary" style="width: 100%; padding: 0.5rem;">Submit Order</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function toggleReferenceImage() {
+                const projectType = document.getElementById('project-type').value;
+                const referenceImageGroup = document.getElementById('reference-image-group');
+                
+                if (projectType === 'custom') {
+                    referenceImageGroup.style.display = 'block';
+                } else {
+                    referenceImageGroup.style.display = 'none';
+                }
+            }
+        </script>
+
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer-inner">
+                    <div class="brand footer-brand">
+                        <a href="index.html">
+                            <img class="header-logo-image" src="dist/images/logo v3.png" alt="Logo">
+                        </a>
+                    </div>
+                    <ul class="footer-links list-reset">
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                    <ul class="footer-social-links list-reset">
+                        <!-- Add social links here -->
+                    </ul>
+                    <div class="footer-copyright">
+                        &copy; 2024 Septi adi maastri, all rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="dist/js/main.min.js"></script>
+</body>
+</html>
